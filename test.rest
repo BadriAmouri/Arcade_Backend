@@ -1,0 +1,95 @@
+### Get all games
+GET http://localhost:3000/api/games
+Content-Type: application/json
+
+### Get a single game by ID (Replace `1` with an existing ID)
+GET http://localhost:3000/api/games/1
+Content-Type: application/json
+
+### Create a new game
+POST http://localhost:3000/api/games
+Content-Type: application/json
+
+{
+  "name": "Squid game",
+  "max_points" : 2 
+}
+
+### Delete a game (Replace `1` with an existing ID)
+DELETE http://localhost:3000/api/games/1
+Content-Type: application/json
+
+
+
+### Get a game by name
+GET http://localhost:3000/api/games/name/Squid_game
+
+
+#####################################################
+
+
+### Get scores by game name
+GET http://localhost:3000/api/scores/Squid_Game
+
+
+
+### Add a score using Team name
+POST http://localhost:3000/api/scores
+Content-Type: application/json
+
+{
+  "game_name": "Squid_game",
+  "team_name": "Arcade_Warriors",
+  "points": 15000
+}
+
+### Delete Score 
+DELETE http://localhost:3000/api/scores/1
+
+
+
+
+
+
+
+#####################################################
+
+
+
+### Get all teams
+GET http://localhost:3000/api/teams
+Content-Type: application/json
+
+### Get a single team by ID (Replace `1` with an actual team ID)
+GET http://localhost:3000/api/teams/1
+Content-Type: application/json
+
+### Create a new team
+POST http://localhost:3000/api/teams
+Content-Type: application/json
+
+{
+  "name": "Arcade Warriors",
+  "description": "A team of pro arcade gamers",
+  "members": {
+    "captain": "John Doe",
+    "players": ["Alice", "Bob"]
+  }
+}
+
+### Update a team (Replace `1` with an existing team ID)
+PUT http://localhost:3000/api/teams/1
+Content-Type: application/json
+
+{
+  "name": "Updated Warriors",
+  "description": "An updated description for the team"
+}
+
+### Delete a team (Replace `1` with an existing team ID)
+DELETE http://localhost:3000/api/teams/1
+Content-Type: application/json
+
+
+### Get a team by name
+GET http://localhost:3000/api/teams/name/Arcade_Warriors
