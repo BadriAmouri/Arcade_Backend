@@ -15,9 +15,13 @@ app.use('/api/scores', scoreRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
+// Export the Express app (Required for Vercel)
+module.exports = app;
+
+//app.listen(PORT, () => {
+ // console.log(`Server running on port ${PORT}`);
+//});
 
 
 // future improvements 
