@@ -8,7 +8,11 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["arcade", "backend", "game-scores"],
+  "keywords": [
+    "arcade",
+    "backend",
+    "game-scores"
+  ],
   "author": "Your Name",
   "license": "ISC",
   "dependencies": {
