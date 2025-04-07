@@ -2,6 +2,9 @@
 GET http://localhost:3000/api/games
 Content-Type: application/json
 
+
+### Get all games with the hosted version
+https://arcade-backend-ckdw.vercel.app/api/games
 ### Get a single game by ID (Replace `1` with an existing ID)
 GET http://localhost:3000/api/games/1
 Content-Type: application/json
@@ -93,3 +96,58 @@ Content-Type: application/json
 
 ### Get a team by name
 GET http://localhost:3000/api/teams/name/Arcade_Warriors
+
+
+
+
+
+##################################################### Registration Table 
+
+
+### 1. Register a member
+POST http://localhost:3000/api/registration/register
+Content-Type: application/json
+
+{
+  "full_name": "BadriAmouri",
+  "email": "john@example.com",
+  "phone_number": "123456789",
+  "school_name": "Tech High School",
+  "team_name": "DOUDOU",
+  "discord_id": "Badri#1234",
+  "level": "Intermediate",
+  "motivation": "I'm excited to join this hackathon to learn and collaborate with others."
+}
+
+### 1. Register a member with vercel host
+POST https://arcade-backend-ckdw.vercel.app/api/registration/register
+Content-Type: application/json
+
+{
+  "full_name": "Rayen",
+  "email": "Rayen@gmail.com",
+  "phone_number": "123456789",
+  "school_name": "Tech High School",
+  "team_name": "Spark",
+  "discord_id": "Rayen#1234"
+}
+
+
+### 2. Get all members
+GET http://localhost:3000/api/registration/members
+
+### 3. Check if team exceeds 8 members
+GET http://localhost:3000/api/registration/check-team/DOUDOU
+
+
+### 4. Accept a team (move from registration to teams)
+POST http://localhost:3000/api/registration/accept-team
+Content-Type: application/json
+
+{
+  "team_name": "DOUDOU"
+}
+
+
+// the new hosted one is :  https://arcade-backend-y3l9.onrender.com 
+// try : curl -X GET https://arcade-backend-y3l9.onrender.com/api/scores

@@ -10,8 +10,13 @@ const {
   
   const registerMember = async (req, res) => {
     try {
-      const data = req.body;
-      const result = await addRegistration(data);
+      const { level, motivation } = req.body;
+  
+      if (!level || !motivation) {
+        return res.status(400).json({ error: 'Level and motivation are required' });
+      }
+  
+      const result = await addRegistration(req.body);
       res.status(201).json(result);
     } catch (error) {
       res.status(500).json({ error: error.message });

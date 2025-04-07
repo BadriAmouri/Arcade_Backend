@@ -3,9 +3,17 @@ const supabase = require('../Config/db');
 
 
 const addRegistration = async (data) => {
+  const { full_name, team_name, level, motivation, ...rest } = data;
+
+  if (!level || !motivation) {
+    throw new Error("Level and motivation are required");
+  }
+
+  const insertData = { full_name, team_name, level, motivation, ...rest };
+
   const { data: result, error } = await supabase
     .from('registration')
-    .insert([data]);
+    .insert([insertData]);
 
   if (error) throw error;
   return result;

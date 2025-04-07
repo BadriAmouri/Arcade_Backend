@@ -33,11 +33,11 @@ app.use('/api/registration', registrationRoutes);
 const PORT = process.env.PORT || 3000;
 
 // Export the Express app (Required for Vercel)
-module.exports = app;
+//module.exports = app;
 
-//app.listen(PORT, () => {
- // console.log(`Server running on port ${PORT}`);
-//});
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 
 // future improvements 
