@@ -49,3 +49,18 @@ exports.getTeamByName = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
+
+  exports.loginTeam = async (req, res) => {
+    try {
+      const { name, Password } = req.body;
+  
+      if (!name || !Password) {
+        return res.status(400).json({ error: 'Name and password are required' });
+      }
+  
+      const team = await TeamModel.loginTeam(name, Password);
+      res.status(200).json({ message: 'Login successful', team });
+    } catch (error) {
+      res.status(401).json({ error: error.message });
+    }
+  };

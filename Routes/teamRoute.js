@@ -9,4 +9,6 @@ router.delete('/:id', teamController.deleteTeam);
 
 router.get('/name/:name', teamController.getTeamByName);
 
+router.post('/login', teamController.loginTeam);
+
 module.exports = router;

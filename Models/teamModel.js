@@ -24,6 +24,20 @@ class TeamModel {
     if (error) throw new Error('Failed to delete team');
     return data[0];
   }
+  static async loginTeam(name, password) {
+    const { data, error } = await supabase
+      .from('teams')
+      .select('*')
+      .eq('name', name)
+      .eq('Password', password) // <-- Capital 'P' to match the actual column
+      .single();
+  
+    if (error || !data) {
+      throw new Error('Invalid team name or password');
+    }
+  
+    return data;
+  }
 
   static async getTeamByName(name) {
     const { data, error } = await supabase

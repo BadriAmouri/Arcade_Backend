@@ -145,7 +145,17 @@ POST http://localhost:3000/api/registration/accept-team
 Content-Type: application/json
 
 {
-  "team_name": "DOUDOU"
+  "team_name": "Dingy Wingy"
+}
+
+
+### Login Team
+POST http://localhost:3000/api/teams/login
+Content-Type: application/json
+
+{
+  "name": "Extraterrestres",
+  "Password": 1
 }
 
 
