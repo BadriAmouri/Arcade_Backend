@@ -28,6 +28,9 @@ Content-Type: application/json
 GET http://localhost:3000/api/games/name/Squid_game
 
 
+### Get a game by name hoster version 
+GET https://arcade-backend-ckdw.vercel.app/api/games/name/Squid_game
+
 #####################################################
 
 
@@ -37,7 +40,7 @@ GET http://localhost:3000/api/scores/Squid_Game
 
 
 ### Add a score using Team name
-POST http://localhost:3000/api/scores
+POST https://arcade-backend-ckdw.vercel.app/api/scores
 Content-Type: application/json
 
 {
@@ -150,7 +153,7 @@ Content-Type: application/json
 
 
 ### Login Team
-POST http://localhost:3000/api/teams/login
+POST https://arcade-backend-ckdw.vercel.app/api/teams/login
 Content-Type: application/json
 
 {

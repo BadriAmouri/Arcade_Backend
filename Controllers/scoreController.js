@@ -44,3 +44,14 @@ exports.deleteScore = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+
+exports.getTotalPointsByTeam = async (req, res) => {
+  try {
+    const teamName = req.params.name;
+    const totalPoints = await ScoreModel.getTotalPointsByTeamName(teamName);
+    res.status(200).json({ teamName, totalPoints });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};

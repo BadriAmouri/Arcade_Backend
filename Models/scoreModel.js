@@ -38,6 +38,20 @@ class ScoreModel {
     if (error) throw new Error(error.message);
     return data;
   }
+
+  static async getTotalPointsByTeamName(teamName) {
+    const { data, error } = await supabase
+      .from('scores')
+      .select('points')
+      .eq('team_name', teamName);
+
+    if (error) throw new Error(error.message);
+
+    const total = data.reduce((sum, entry) => sum + entry.points, 0);
+    return total;
+  }
+  
 }
+
 
 module.exports = ScoreModel;
